@@ -1,0 +1,10 @@
+header{
+    text-align: center;
+}
+
+table,tr,td{
+    margin: auto;
+    border: 1px solid black;
+    
+}
+
