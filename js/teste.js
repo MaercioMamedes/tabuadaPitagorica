@@ -1,17 +1,18 @@
 var matriz = []
 var linhaMaster = []
 var colunaMaster = []
-var numero = 10
+var numero = 4
 
-for(var numero = 4; numero>0; numero--){
-    linhaMaster.push(numero)
-    colunaMaster.push(numero)
+for(let x = 0; x<=numero; x++){
+    if(x!=0){
+        linhaMaster.push(x)
+        colunaMaster.push(x)
+    }
+    
 }
-linhaMaster.sort()
-colunaMaster.sort()
+
 console.log(linhaMaster)
 console.log(colunaMaster)
-console.log(linhaMaster*colunaMaster)
 
 
 for(var linha = 0; linha<linhaMaster.length; linha++){
