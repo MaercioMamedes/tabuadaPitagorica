@@ -1,30 +1,45 @@
-var control=0                
-
-function adicionar(){
-    let linha = window.document.getElementById("linha1")
-    let celula = window.document.createElement("td")
+function insert(idC){
+    var coluna = window.document.getElementById(idC)
+    var celula = window.document.createElement("td")
     
 
     celula.innerText="olá mundo"
-
-    linha.appendChild(celula)
-                           
-
-}
-
-function coluna(){
-    control++                                                        
-    let coluna = window.document.getElementById("tabela")
-    let Tcoluna = window.document.createElement("tr")
-    Tcoluna.id="linha"+control
-    let text="é nóis"
-    let linha = window.document.getElementById(Tcoluna.id)
-    let celula = window.document.createElement("td")
-    
-    celula.innerText=text
-
-    linha.appendChild(celula)
-
+    coluna.appendChild(celula)
 
 
 }
+
+function criarLinha(){
+    var tabela = window.document.getElementById("tabela")
+    var coluna = window.document.createElement("tr")
+
+    coluna.id="linha2"
+
+    tabela.appendChild(coluna)
+
+
+}
+
+function preenchendoLinha(idC,control){
+    for(let x=0;x<4;x++){
+    insert(idC+control)
+}
+}
+var RESULTADO = window.document.getElementById("resultado")
+
+var TABELA = window.document.createElement("table")
+TABELA.id="tabela"
+
+RESULTADO.appendChild(TABELA)
+
+var LINHA = window.document.createElement("tr")
+LINHA.id="linha1"
+
+TABELA.appendChild(LINHA)
+
+var control=1
+var idC ="linha"
+preenchendoLinha(idC,control)
+criarLinha()
+control++
+preenchendoLinha(idC,control)
