@@ -27,8 +27,16 @@ table,tr,td{
 }
 
 div{
-    text-align: center;
+    text-align:center;
 }
+div#resultado{
+    text-align: justify;
+    margin:5px;
+    padding: 20px;
+    font-size: 14pt;
+    te
+}
+
 
 .col0,#linha0{
     background: cornflowerblue;

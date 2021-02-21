@@ -64,10 +64,19 @@ function gerarMatriz(valor){
     return matriz
 }
 
-function main(){
+function apagar(){
+    var RESULTADO = window.document.getElementById("resultado")
+    RESULTADO.innerHTML=""
 
+}
+
+function main(){
+    apagar()
     var TXvalor = window.document.getElementById("numero")
     var valor = Number(TXvalor.value)
+    if(valor>10){
+        window.confirm("Você digitou um número maior que 10 e o resultado pode sair da área de plotagem, deseja continuar?")
+    }
     var matriz = gerarMatriz(valor)
     var RESULTADO = window.document.getElementById("resultado")
     var TABELA = window.document.createElement("table")
