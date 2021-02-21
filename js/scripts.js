@@ -1,3 +1,5 @@
+// toda linha inserida na tabela é realizada nessa função
+
 function insert(idLinha,valor,x){
     var linha = window.document.getElementById(idLinha)
     var celula = window.document.createElement("td")
@@ -8,6 +10,7 @@ function insert(idLinha,valor,x){
 
 }
 
+// Cria a TAG "tr", que define as linhas da coluna
 function criarLinha(id,matriz){
     var tabela = window.document.getElementById("tabela")
     var linha = window.document.createElement("tr")
@@ -23,6 +26,7 @@ function criarLinha(id,matriz){
     
 }
 
+// separa a matriz em vetores e chama as funções para construir as linhas 
 function preenchendoLinha(matriz){
     for(let x = 0;x<matriz.length;x++){
         criarLinha(x,matriz[x])
@@ -30,6 +34,8 @@ function preenchendoLinha(matriz){
     }
 }
 
+
+// gera a matriz da tabela
 function gerarMatriz(valor){
     var matriz = []
     var linhaMaster = []
@@ -64,12 +70,14 @@ function gerarMatriz(valor){
     return matriz
 }
 
+// apaga texto da área de plotagem quando um novo parâmetro é carregado
 function apagar(){
     var RESULTADO = window.document.getElementById("resultado")
     RESULTADO.innerHTML=""
 
 }
 
+// função principal: criaelementos e chama outras funções para contrução da tabela
 function main(){
     apagar()
     var TXvalor = window.document.getElementById("numero")
