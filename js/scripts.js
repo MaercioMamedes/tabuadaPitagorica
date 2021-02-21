@@ -1,7 +1,8 @@
-function insert(idLinha,valor){
+function insert(idLinha,valor,x){
     var linha = window.document.getElementById(idLinha)
     var celula = window.document.createElement("td")
     celula.innerText=valor
+    celula.className="col"+x
     linha.appendChild(celula)
 
 
@@ -14,22 +15,16 @@ function criarLinha(id,matriz){
     linha.id=idLinha
     tabela.appendChild(linha)
 
-    if(idLinha=='linha0'){
-        insert(idLinha,0)
-        for(let x = 0; x<matriz.length;x++){
-            insert(idLinha,matriz[x])
-        }
-    } else{
-            insert(idLinha,id)
-            for(let x = 0; x<matriz.length;x++){
-                insert(idLinha,matriz[x])
 
-            }  
-        }
+    for(let x = 0; x<matriz.length;x++){
+        insert(idLinha,matriz[x],x)
+
+    }  
+    
 }
 
 function preenchendoLinha(matriz){
-    for(let x = 1;x<matriz.length;x++){
+    for(let x = 0;x<matriz.length;x++){
         criarLinha(x,matriz[x])
 
     }
@@ -47,6 +42,7 @@ function gerarMatriz(valor){
     
     }
 
+    matriz.push(linhaMaster)
     for(var linha = 0; linha<linhaMaster.length; linha++){
         let vetor = []
         for(var coluna= 0; coluna<colunaMaster.length; coluna++){
@@ -55,6 +51,16 @@ function gerarMatriz(valor){
         matriz.push(vetor)
     }
     
+    matriz[0].reverse()
+    matriz[0].push("X")
+    matriz[0].reverse()
+
+    for(var x=1;x<matriz.length;x++){
+        matriz[x].reverse()
+        matriz[x].push(x)
+        matriz[x].reverse()
+    
+    }
     return matriz
 }
 
@@ -67,7 +73,5 @@ function main(){
     var TABELA = window.document.createElement("table")
     TABELA.id="tabela"
     RESULTADO.appendChild(TABELA)
-    var id = 0
-    criarLinha(id,matriz[0])
     preenchendoLinha(matriz)
 }

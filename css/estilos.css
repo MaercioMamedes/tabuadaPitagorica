@@ -12,7 +12,7 @@ header{
 section{
     margin: auto;
     background: white;
-    height: 500px;
+    height: 700px;
     width: 800px;
     border-radius: 5%;
     padding: 2px;
@@ -23,9 +23,14 @@ table,tr,td{
     padding: 10px;
     padding-left: 10px;
     
+    
 }
 
 div{
     text-align: center;
 }
 
+.col0,#linha0{
+    background: cornflowerblue;
+    color: white;
+}
